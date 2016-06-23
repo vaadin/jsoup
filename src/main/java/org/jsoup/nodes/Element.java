@@ -668,7 +668,7 @@ public class Element extends Node {
      */
     public Elements getElementsByAttribute(String key) {
         Validate.notEmpty(key);
-        key = key.trim().toLowerCase();
+        key = key.trim();
 
         return Collector.collect(new Evaluator.Attribute(key), this);
     }
@@ -681,7 +681,7 @@ public class Element extends Node {
      */
     public Elements getElementsByAttributeStarting(String keyPrefix) {
         Validate.notEmpty(keyPrefix);
-        keyPrefix = keyPrefix.trim().toLowerCase();
+        keyPrefix = keyPrefix.trim();
 
         return Collector.collect(new Evaluator.AttributeStarting(keyPrefix), this);
     }

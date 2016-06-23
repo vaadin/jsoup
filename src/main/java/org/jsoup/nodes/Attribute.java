@@ -31,7 +31,7 @@ public class Attribute implements Map.Entry<String, String>, Cloneable  {
     public Attribute(String key, String value) {
         Validate.notEmpty(key);
         Validate.notNull(value);
-        this.key = key.trim().toLowerCase();
+        this.key = key.trim();
         this.value = value;
     }
 
@@ -49,7 +49,7 @@ public class Attribute implements Map.Entry<String, String>, Cloneable  {
      */
     public void setKey(String key) {
         Validate.notEmpty(key);
-        this.key = key.trim().toLowerCase();
+        this.key = key.trim();
     }
 
     /**

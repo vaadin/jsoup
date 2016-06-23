@@ -17,14 +17,14 @@ public class AttributesTest {
         a.put("data-name", "Jsoup");
 
         assertEquals(3, a.size());
-        assertTrue(a.hasKey("tot"));
+        assertTrue(a.hasKey("Tot"));
         assertTrue(a.hasKey("Hello"));
         assertTrue(a.hasKey("data-name"));
         assertEquals(1, a.dataset().size());
         assertEquals("Jsoup", a.dataset().get("name"));
-        assertEquals("a&p", a.get("tot"));
+        assertEquals("a&p", a.get("Tot"));
 
-        assertEquals(" tot=\"a&amp;p\" hello=\"There\" data-name=\"Jsoup\"", a.html());
+        assertEquals(" Tot=\"a&amp;p\" Hello=\"There\" data-name=\"Jsoup\"", a.html());
         assertEquals(a.html(), a.toString());
     }
 

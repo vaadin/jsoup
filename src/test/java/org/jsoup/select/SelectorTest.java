@@ -48,7 +48,7 @@ public class SelectorTest {
     }
 
     @Test public void testByAttribute() {
-        String h = "<div Title=Foo /><div Title=Bar /><div Style=Qux /><div title=Bam /><div title=SLAM />" +
+        String h = "<div title=Foo /><div title=Bar /><div style=Qux /><div title=Bam /><div title=SLAM />" +
                 "<div data-name='with spaces'/>";
         Document doc = Jsoup.parse(h);
 
@@ -299,16 +299,6 @@ public class SelectorTest {
         Elements els = doc.select("div#foo > h1.bar > a[href*=example]");
         assertEquals(1, els.size());
         assertEquals("a", els.first().tagName());
-    }
-
-    @Test public void caseInsensitive() {
-        String h = "<dIv tItle=bAr><div>"; // mixed case so a simple toLowerCase() on value doesn't catch
-        Document doc = Jsoup.parse(h);
-
-        assertEquals(2, doc.select("DIV").size());
-        assertEquals(1, doc.select("DIV[TITLE]").size());
-        assertEquals(1, doc.select("DIV[TITLE=BAR]").size());
-        assertEquals(0, doc.select("DIV[TITLE=BARBARELLA").size());
     }
 
     @Test public void adjacentSiblings() {

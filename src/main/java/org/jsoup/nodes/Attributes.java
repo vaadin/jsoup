@@ -37,7 +37,7 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
         if (attributes == null)
             return "";
 
-        Attribute attr = attributes.get(key.toLowerCase());
+        Attribute attr = attributes.get(key);
         return attr != null ? attr.getValue() : "";
     }
 
@@ -82,7 +82,7 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
         Validate.notEmpty(key);
         if (attributes == null)
             return;
-        attributes.remove(key.toLowerCase());
+        attributes.remove(key);
     }
 
     /**
@@ -91,7 +91,7 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
      @return true if key exists, false otherwise
      */
     public boolean hasKey(String key) {
-        return attributes != null && attributes.containsKey(key.toLowerCase());
+        return attributes != null && attributes.containsKey(key);
     }
 
     /**
